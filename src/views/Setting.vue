@@ -1,6 +1,6 @@
 <template>
     <div>
-     专题管理
+     设置
     </div>
   </template>
   

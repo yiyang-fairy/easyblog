@@ -1,26 +1,33 @@
 <template>
-  <div>login</div>
-  <el-button type="primary" @click="toIndex()">Primary</el-button>
+  <div>
+    <div class="login">login</div>
+    
 
-  <div class="flex flex-x-y">
-    <el-form
-    ref="ruleFormRef"
-    :model="ruleForm"
-    status-icon
-    :rules="rules"
-    class="form"
-  >
-    <el-form-item label="Password" prop="pass">
-      <el-input v-model="ruleForm.pass" type="password" autocomplete="off" />
-    </el-form-item>
-    <el-form-item label="Confirm" prop="checkPass">
-      <el-input
-        v-model="ruleForm.checkPass"
-        type="password"
-        autocomplete="off"
-      />
-    </el-form-item>
-  </el-form>
+    <div class="flex flex-x-y">
+      <el-form
+        ref="ruleFormRef"
+        :model="ruleForm"
+        status-icon
+        :rules="rules"
+        class="form"
+      >
+        <el-form-item label="Password" prop="pass">
+          <el-input
+            v-model="ruleForm.pass"
+            type="password"
+            autocomplete="off"
+          />
+        </el-form-item>
+        <el-form-item label="Confirm" prop="checkPass">
+          <el-input
+            v-model="ruleForm.checkPass"
+            type="password"
+            autocomplete="off"
+          />
+        </el-form-item>
+        <el-button type="primary" @click="toIndex()">登录</el-button>
+      </el-form>
+    </div>
   </div>
 </template>
 
@@ -45,8 +52,12 @@ const toIndex = () => {
 
 <style>
 .form {
-    width: 400px;
-    padding: 20px;
-    border: 1px solid #ccc;
+  width: 400px;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+.login {
+  width: 100%;
+  text-align: center;
 }
 </style>
