@@ -20,7 +20,7 @@
       <el-button type="success" @click="create()">新建</el-button>
     </div>
 
-    <div>
+    <div class="mt-20">
       <el-table :data="tableData" style="width: 100%">
         <el-table-column prop="date" label="封面" width="180">
         </el-table-column>
