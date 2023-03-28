@@ -40,29 +40,30 @@
 
     </el-form>
     <div class="ml-40 mt-20">
-    <el-button class="bg-green-500" type="success">Success</el-button>
+      <el-button class="bg-green-500"
+                 type="success">Success</el-button>
 
     </div>
+    
   </div>
+  
 </template>
   
-  <script lang="ts" setup>
+<script  setup>
 import { reactive } from "vue";
-
 import { ref } from "vue";
 import { ElMessage } from "element-plus";
 import { Plus } from "@element-plus/icons-vue";
-
-import type { UploadProps } from "element-plus";
-
-const handleAvatarSuccess: UploadProps["onSuccess"] = (
+// import type { UploadProps } from "element-plus";
+import Create from '../components/Create/Create.vue';
+const handleAvatarSuccess = (
   response,
   uploadFile
 ) => {
-  form.imageUrl = URL.createObjectURL(uploadFile.raw!);
+  // form.imageUrl = URL.createObjectURL(uploadFile.raw!);
 };
 
-const beforeAvatarUpload: UploadProps["beforeUpload"] = (rawFile) => {
+const beforeAvatarUpload = (rawFile) => {
   if (rawFile.type !== "image/jpeg") {
     ElMessage.error("Avatar picture must be JPG format!");
     return false;
@@ -73,7 +74,6 @@ const beforeAvatarUpload: UploadProps["beforeUpload"] = (rawFile) => {
   return true;
 };
 
-// do not use same name with ref
 const form = reactive({
   name: "",
   phone: "",

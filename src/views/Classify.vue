@@ -1,7 +1,9 @@
 <template>
   <div>
     <div>
-      <el-button class="bg-green-500" type="success" @click="create()">新增分类</el-button>
+      <el-button type="success"
+                 plain
+                 @click="create() ">新增分类</el-button>
     </div>
 
     <div class="mt-20">

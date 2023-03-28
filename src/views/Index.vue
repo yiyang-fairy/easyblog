@@ -1,4 +1,5 @@
 <template>
+
   <div class="bg-grey">
     <div class="common-layout">
       <el-container>
@@ -40,6 +41,9 @@
 <script setup>
 import { reactive, ref } from "vue";
 import { useRouter } from 'vue-router'
+
+
+
 const router = useRouter();
 let currentName = ref('')
 function open(item) {
