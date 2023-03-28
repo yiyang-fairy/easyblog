@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <el-button type="success" @click="create()">新增分类</el-button>
+      <el-button class="bg-green-500" type="success" @click="create()">新增分类</el-button>
     </div>
 
     <div class="mt-20">
@@ -34,7 +34,7 @@
   </div>
 </template>
 <script setup>
-import { reactive } from 'vue'
+import { reactive } from "vue";
 function create() {
   console.log("新建一个文章");
 }
@@ -50,25 +50,24 @@ const tableData = [
     titlePage: "11",
     name: "hihi",
     intro: "000",
-    numbers:'19',
-    handle:'ppp'
-
+    numbers: "19",
+    handle: "ppp",
   },
   {
     titlePage: "11",
     name: "hihi",
     intro: "000",
-    numbers:'19',
-    handle:'ppp'
+    numbers: "19",
+    handle: "ppp",
   },
   {
     titlePage: "11",
     name: "hihi",
     intro: "000",
-    numbers:'19',
-    handle:'ppp'
+    numbers: "19",
+    handle: "ppp",
   },
-]
+];
 </script>
 <style>
 </style>

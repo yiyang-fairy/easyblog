@@ -14,10 +14,10 @@
         <span class="nowrap mr-10">分类</span>
         <el-input v-model="input" placeholder="请输入内容"></el-input>
       </div>
-      <el-button type="primary">搜索</el-button>
+      <el-button class="bg-blue-500" type="primary">搜索</el-button>
     </div>
     <div class="mt-20">
-      <el-button type="success" @click="create()">新建</el-button>
+      <el-button class="bg-green-500" type="success" @click="create()">新建</el-button>
     </div>
 
     <div class="mt-20">
