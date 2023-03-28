@@ -5,6 +5,7 @@ import 'element-plus/dist/index.css'
 import App from './App.vue'
 import router from './router'
 import './index.css'
+import './components/commen/iconfont.css'
 
 const app = createApp(App)
 app.use(ElementPlus)
