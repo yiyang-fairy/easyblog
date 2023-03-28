@@ -23,13 +23,22 @@ const routes = [
                 path: '/specialTopic',
                 component: () => import('../views/SpecialTopic.vue'),
             }, {
-                name: '个人信息',
+                name: '个人信息设置',
                 path: '/myInfo',
                 component: () => import('../views/UserInfo.vue'),
             }, {
-                name: '成员',
+                name: '成员管理',
                 path: '/member',
                 component: () => import('../views/Member.vue'),
+            }, {
+                name: '系统设置',
+                path: '/system',
+                component: () => import('../views/System.vue'),
+            },
+            {
+                name: '回收站',
+                path: '/retrieve',
+                component: () => import('../views/Retrieve.vue'),
             },
         ]
     }

@@ -2,7 +2,10 @@
   <div class="bg-grey">
     <div class="common-layout">
       <el-container>
-        <el-header style="background-color: #fff;" @click="toIndex()">Header</el-header>
+        <el-header class="flex justify-between bg-white items-center">
+          <div @click="toIndex()">easyblog</div>
+          <div>欢迎</div>
+        </el-header>
         <el-container>
           <el-aside width="200px">
             <el-menu :unique-opened="true"
@@ -15,10 +18,10 @@
                   <span class="color-333">{{ item.name }}</span>
                 </template>
                 <div v-for="(item1, index ) in item.group"
-                     :key="index">
-                  <el-menu-item @click="open(item1, index)"
-                                class="color-333 menu-item hover:bg-white"
-                                :class="isCurrent2==index?'bg-white':'bg-grey'">{{item1.name}}</el-menu-item>
+                     :key="index" class="hover:bg-white">
+                  <el-menu-item @click="open(item1)"
+                                class="color-333 menu-item "
+                                :class="currentName==item1.name?'bg-white':'bg-grey'">{{item1.name}}</el-menu-item>
                 </div>
               </el-sub-menu>
             </el-menu>
@@ -38,10 +41,9 @@
 import { reactive, ref } from "vue";
 import { useRouter } from 'vue-router'
 const router = useRouter();
-let isCurrent1 = ref(0)
-let isCurrent2 = ref(0)
-function open(item, index) {
-  isCurrent2.value = index
+let currentName = ref('')
+function open(item) {
+  currentName.value = item.name
   router.push(item.url)
 }
 function toIndex() {
@@ -84,7 +86,7 @@ const list = [
       },
       {
         name: "系统设置",
-        url: '/setting'
+        url: '/system'
       }
     ]
   },
@@ -92,7 +94,8 @@ const list = [
     name: "回收站",
     group: [
       {
-        name: '回收站'
+        name: '回收站',
+        url: '/retrieve'
       }
     ]
   }
