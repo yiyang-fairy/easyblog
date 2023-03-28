@@ -1,9 +1,6 @@
 <template>
   <div>
-    <div class="login">login</div>
-    
-
-    <div class="flex flex-x-y">
+    <div class="flex flex-x-y mt-20">     
       <el-form
         ref="ruleFormRef"
         :model="ruleForm"
@@ -11,16 +8,17 @@
         :rules="rules"
         class="form"
       >
-        <el-form-item label="Password" prop="pass">
+      <div class="login">login</div>
+        <el-form-item label="账号" prop="id">
           <el-input
-            v-model="ruleForm.pass"
-            type="password"
+            v-model="ruleForm.id"
+            type="text"
             autocomplete="off"
           />
         </el-form-item>
-        <el-form-item label="Confirm" prop="checkPass">
+        <el-form-item label="密码" prop="password">
           <el-input
-            v-model="ruleForm.checkPass"
+            v-model="ruleForm.password"
             type="password"
             autocomplete="off"
           />
@@ -32,20 +30,25 @@
 </template>
 
 <script setup>
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
 import { useRouter } from 'vue-router'
+import { ElMessage } from 'element-plus'
 const router = useRouter();
 const ruleForm = reactive({
-  pass: "",
-  checkPass: "",
+  id: "",
+  password: "",
 });
 
 const rules = reactive({
-  pass: [{ required: true, message: "请输入" }],
-  checkPass: [{ required: true, message: "请输入" }],
+  id: [{ required: true, message: "请输入" }],
+  password: [{ required: true, message: "请输入" }],
 });
-
+let show = ref(false)
 const toIndex = () => {
+  if(!ruleForm.id || !ruleForm.password) {
+    ElMessage.error('账号或密码不正确')
+    return
+  }
     router.push("/index")
 };
 </script>
@@ -59,5 +62,6 @@ const toIndex = () => {
 .login {
   width: 100%;
   text-align: center;
+  margin-bottom: 10px;
 }
 </style>
