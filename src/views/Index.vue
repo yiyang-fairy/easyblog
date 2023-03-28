@@ -2,7 +2,7 @@
   <div class="bg-grey">
     <div class="common-layout">
       <el-container>
-        <el-header style="background-color: #fff;">Header</el-header>
+        <el-header style="background-color: #fff;" @click="toIndex()">Header</el-header>
         <el-container>
           <el-aside width="200px">
             <el-menu :unique-opened="true"
@@ -41,10 +41,11 @@ const router = useRouter();
 let isCurrent1 = ref(0)
 let isCurrent2 = ref(0)
 function open(item, index) {
-  console.log(item, 'item')
   isCurrent2.value = index
-  console.log(isCurrent2)
   router.push(item.url)
+}
+function toIndex() {
+  router.push('/blog')
 }
 const list = [
   {
@@ -74,12 +75,12 @@ const list = [
     group: [
       {
         name: '个人信息设置',
-        url: '/setting'
+        url: '/myInfo'
 
       },
       {
         name: '博客成员',
-        url: '/setting'
+        url: '/member'
       },
       {
         name: "系统设置",
