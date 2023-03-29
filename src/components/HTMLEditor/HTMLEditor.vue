@@ -1,6 +1,5 @@
 <template>
   <div>
-    HTMLEditor
     <Toolbar style="border-bottom: 1px solid #ccc"
              :editor="editorRef"
              :defaultConfig="toolbarConfig"
@@ -19,7 +18,9 @@ import '@wangeditor/editor/dist/css/style.css' // 引入 css
 
 import { onBeforeUnmount, ref, shallowRef} from 'vue'
 import { Editor, Toolbar } from '@wangeditor/editor-for-vue'
-
+// editorConfig.MENU_CONF['uploadImage'] = {
+//      server: '/api/upload',
+// }
 // 编辑器实例，必须用 shallowRef
 const editorRef = shallowRef()
 
@@ -54,6 +55,7 @@ const props = defineProps({
     default: ''
   }
 })
+
 </script>
 
 <style>

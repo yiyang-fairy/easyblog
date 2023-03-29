@@ -1,5 +1,9 @@
 <template>
-  <div>0000
+  <div>
+
+    <div @click="back()" class="mb-20">
+        返回
+    </div>
     <!-- <MarkdownEditor v-model="markdeonContent" :height="500"></MarkdownEditor> -->
 
     <HTMLEditor v-model="htmlContent"></HTMLEditor>
@@ -10,10 +14,15 @@
 
 <script setup>
 import {ref} from 'vue'
+import { useRouter } from 'vue-router'
+const router = useRouter();
 let htmlContent = ref('')
 let markdeonContent = ref('')
 
 console.log(markdeonContent)
+const back = () => {
+router.push('/Blog')
+}
 </script>
 
 <style>
