@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Create :config="obj" ref="create"></Create>
     <div class="flex">
       <div class="flex-x-y mr-20">
         <span class="nowrap mr-10">标题</span>
@@ -24,7 +23,7 @@
     <div class="mt-20">
       <el-button type="success"
                  plain
-                 @click="create() ">新建文章</el-button>
+                 @click="createTitle() ">新建文章</el-button>
     </div>
 
     <div class="mt-20">
@@ -56,25 +55,25 @@
                      :total="3">
       </el-pagination>
     </div>
+    <Create :config="obj"
+            :type="1"
+            ref="createRef"></Create>
   </div>
 </template>
 <script setup>
 import Create from '../components/Create/Create.vue';
 import { reactive, ref } from "vue";
+import { ElMessage, ElMessageBox } from 'element-plus'
 const obj = reactive({
-  title:'新增文章',
-  name:'',
-  phone:'',
+  title: '新增文章',
+  name: '',
+  phone: '',
 
 })
+const createRef = ref()
 
-const create = ref(null)
-const createFunc = ()=> {
-  create.value.open()
-}
-function create() {
-  console.log('新建一个文章')
-  createFunc()
+const createTitle = () =>{
+    createRef.value.open()
 }
 const tableData = [
   {

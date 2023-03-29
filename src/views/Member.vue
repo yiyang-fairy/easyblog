@@ -16,7 +16,7 @@
                  type="primary">搜索</el-button>
       <el-button type="success"
                  plain
-                 @click="create() ">新增成员</el-button>
+                 @click="createMemeber() ">新增成员</el-button>
     </div>
     <div class="mt-20">
       <el-table :data="tableData"
@@ -49,12 +49,15 @@
                      :total="3">
       </el-pagination>
     </div>
+    <create :type="4" ref="createRef"></create>
   </div>
 </template>
   <script setup>
+import {ref} from 'vue'
 
-function create() {
-  console.log('新建一个文章')
+const createRef = ref()
+function createMemeber() {
+  createRef.value.open()
 }
 const tableData = [
   {

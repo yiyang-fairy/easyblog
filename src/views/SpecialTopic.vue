@@ -3,7 +3,7 @@
     <div class="">
       <el-button class="bg-green-500"
                  type="success"
-                 @click="create()">新建</el-button>
+                 @click="createTopic()">新建</el-button>
     </div>
     <div class="flex mt-10">
       <el-card class="box-card mr-10 w-50%">
@@ -76,17 +76,23 @@
         </el-tree>
       </el-card>
     </div>
+    <Create :type="3" ref="createRef"></Create>
   </div>
 </template>
   
 <script setup>
 import { ref } from "vue";
+import Create from '../components/Create/Create.vue';
 let show = ref(false);
 function open() {
   show.value = !show.value;
 }
 function create() {
   console.log("新建一个文章");
+}
+const createRef = ref()
+function createTopic() {
+  createRef.value.open()
 }
 
 const tableData = [

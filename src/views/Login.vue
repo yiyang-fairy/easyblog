@@ -23,7 +23,7 @@
             autocomplete="off"
           />
         </el-form-item>
-        <el-button type="primary" @click="toIndex()">登录</el-button>
+        <el-button type="primary" plain @click="toIndex()">登录</el-button>
       </el-form>
     </div>
   </div>

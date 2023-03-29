@@ -3,7 +3,7 @@
     <div>
       <el-button type="success"
                  plain
-                 @click="create() ">新增分类</el-button>
+                 @click="createClassify() ">新增分类</el-button>
     </div>
 
     <div class="mt-20">
@@ -33,10 +33,13 @@
       <el-pagination background layout="prev, pager, next" :total="3">
       </el-pagination>
     </div>
+    <Create :type="2" ref="createRef"></Create>
   </div>
 </template>
 <script setup>
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
+import Create from '../components/Create/Create.vue';
+
 function create() {
   console.log("新建一个文章");
 }
@@ -45,6 +48,10 @@ function handleEdit(index, row) {
 }
 function handleDelete(index, row) {
   console.log(index, row);
+}
+const createRef = ref()
+function createClassify() {
+  createRef.value.open()
 }
 
 const tableData = [

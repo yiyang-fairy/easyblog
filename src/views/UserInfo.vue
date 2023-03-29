@@ -54,13 +54,11 @@ import { reactive } from "vue";
 import { ref } from "vue";
 import { ElMessage } from "element-plus";
 import { Plus } from "@element-plus/icons-vue";
-// import type { UploadProps } from "element-plus";
-import Create from '../components/Create/Create.vue';
 const handleAvatarSuccess = (
   response,
   uploadFile
 ) => {
-  // form.imageUrl = URL.createObjectURL(uploadFile.raw!);
+  form.imageUrl = URL.createObjectURL(uploadFile.raw);
 };
 
 const beforeAvatarUpload = (rawFile) => {
