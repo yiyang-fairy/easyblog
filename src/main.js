@@ -7,11 +7,13 @@ import router from './router'
 import './index.css'
 import './components/commen/iconfont.css'
 import Create from './components/Create/Create.vue'
+import MarkdownEditor from './components/MarkdownEditor/MarkdownEditor.vue'
+
 
 const app = createApp(App)
 
 app.component('Create', Create)
-
+app.component('MarkdownEditor', MarkdownEditor)
 app.use(ElementPlus)
 app.use(router)
 app.mount('#app')

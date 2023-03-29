@@ -14,7 +14,13 @@ const routes = [
                 name: '博客管理',
                 path: '/blog',
                 component: () => import('../views/Blog.vue'),
-            }, {
+            }, 
+            {
+                name: '创建文章',
+                path: '/publish',
+                component: () => import('../views/Publish.vue'),
+            },
+            {
                 name: '分类管理',
                 path: '/classify',
                 component: () => import('../views/Classify.vue'),

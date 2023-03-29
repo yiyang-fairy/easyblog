@@ -64,6 +64,8 @@
 import Create from '../components/Create/Create.vue';
 import { reactive, ref } from "vue";
 import { ElMessage, ElMessageBox } from 'element-plus'
+import { useRouter } from 'vue-router'
+const router = useRouter();
 const obj = reactive({
   title: '新增文章',
   name: '',
@@ -73,7 +75,8 @@ const obj = reactive({
 const createRef = ref()
 
 const createTitle = () =>{
-    createRef.value.open()
+    // createRef.value.open()
+    router.push('/publish')
 }
 const tableData = [
   {
