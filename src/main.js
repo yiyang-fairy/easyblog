@@ -9,6 +9,7 @@ import './components/commen/iconfont.css'
 import Create from './components/Create/Create.vue'
 import MarkdownEditor from './components/MarkdownEditor/MarkdownEditor.vue'
 import HTMLEditor from './components/HTMLEditor/HTMLEditor.vue'
+import operateButton from './components/operateButton/operateButton.vue'
 
 
 
@@ -17,7 +18,7 @@ const app = createApp(App)
 app.component('Create', Create)
 app.component('MarkdownEditor', MarkdownEditor)
 app.component('HTMLEditor', HTMLEditor)
-
+app.component('operateButton', operateButton)
 app.use(ElementPlus)
 app.use(router)
 app.mount('#app')
